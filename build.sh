@@ -26,7 +26,7 @@ cat "$INPUT_FILE" | docker run \
   --cap-drop ALL \
   --security-opt no-new-privileges:true \
   -v "$(pwd)/output:/out:rw" \
-  cpp-wasm-sandbox:v2 \
+  safe-cpp2wasm \
   sh -c "    
     cat > /tmp/source.cpp
     timeout 30s emcc /tmp/source.cpp -o /out/${BASENAME}.js \
