@@ -16,11 +16,18 @@ A sandboxed pipeline for safely compiling C++ source files into WebAssembly (`.w
 
 ## Quick Start
 
-### 1. Build the Docker image
+### 1. Pull the pre-built image from GitHub Container Registry
+
+```bash
+docker pull ghcr.io/dong-chen-1031/safe-cpp2wasm:latest
+docker tag ghcr.io/dong-chen-1031/safe-cpp2wasm:latest safe-cpp2wasm
+```
+
+### 1b. (Alternative) Build the Docker image locally
 
 ```bash
 cd docker
-docker build -t cpp-wasm-sandbox:v2 .
+docker build -t safe-cpp2wasm .
 ```
 
 ### 2. Compile a C++ file
@@ -41,6 +48,8 @@ The compiled output will appear in the `output/` directory as `<your_source>.js`
 ## Project Structure
 
 ```
+.github/workflows/
+  docker-publish.yml   # CI: build & push image to GHCR
 build.sh               # Main build script
 test.sh                # Quick smoke test
 docker/
