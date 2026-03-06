@@ -2,13 +2,13 @@ FROM emscripten/emsdk:latest
 
 USER root
 
-# 1. Create the system-level bits directory
-RUN mkdir -p /emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/bits
+# 1. Create the system-level directory
+RUN mkdir -p /emsdk/upstream/emscripten/cache/sysroot/include/c++/v1
 
-# 2. Copy stdc++.h from host into the container's standard library path
-COPY inner/bits/stdc++.h /emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/bits/stdc++.h
+# 2. Copy all contents from inner/ into the container's standard library path
+COPY inner/ /emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/
 
-
+COPY  js_lib/stdin_lib.js /tmp/stdin_lib.js
 # Create temp directory
 # RUN mkdir /temp \
 #     && chown sandbox_user:sandbox_user /temp \
