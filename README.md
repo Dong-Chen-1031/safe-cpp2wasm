@@ -1,5 +1,8 @@
 # safe-cpp2wasm
 
+> [!IMPORTANT]
+> **This repository is archived.** safe-cpp2wasm has been merged into the [CPP-here](https://github.com/Dong-Chen-1031/CPP-here) monorepo and now lives in [`builder/`](https://github.com/Dong-Chen-1031/CPP-here/tree/main/builder), where all future development happens. Please open issues and pull requests there.
+
 A sandboxed pipeline for safely compiling C++ source files into WebAssembly (`.wasm` / `.js`) using Docker and [Emscripten](https://emscripten.org/).
 
 ## Features
